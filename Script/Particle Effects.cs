@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript2 : MonoBehaviour
+public class ParticleEffects : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem particleSys;
+    
+    private void PlayParticleEffect()
     {
-        
-    }
+        particleSys.Play();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

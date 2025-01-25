@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript3 : MonoBehaviour
+public class Audio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Audio")]
+    [SerializeField] private AudioClip audioclip;
+    [SerializeField] private AudioSource audioSource;
+    public void PlayAudioClip()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioSource.Play();
     }
 }

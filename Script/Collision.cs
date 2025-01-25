@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript4 : MonoBehaviour
+public class Collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Collision")]
+    [SerializeField] LayerMask WallLayer;
+    [SerializeField] private AudioClip audioclip;
+    [SerializeField] private AudioSource audioSource;
+   
+    private void PlayAudioClip()
     {
-        
+        audioSource.Play();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionColliderHit(ControllerColliderHit hit)
     {
-        
+        if ((WallLayer.value & (1 << hit.gameObject.layer)) > 0)
+        {
+            PlayAudioClip();
+        }
     }
 }
